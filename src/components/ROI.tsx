@@ -19,7 +19,7 @@ export default function ROI() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-light text-white tracking-tight mb-6 geist-font"
+            className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-bold text-white tracking-widest uppercase mb-6 geist-font"
           >
             The Math Makes Sense.
           </motion.h2>
@@ -34,39 +34,54 @@ export default function ROI() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {metrics.map((metric, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
-                ease: [0.22, 1, 0.36, 1] 
-              }}
-              className="glass-card rounded-2xl p-8 backdrop-blur-md bg-white/[0.02] border border-white/10 text-center hover:border-emerald-500/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]"
-            >
+        {/* Retro Scoreboard outer container */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-4xl mx-auto bg-[#050505] border-2 border-emerald-500 shadow-[6px_6px_0px_#047857] p-2"
+        >
+          {/* Scoreboard header bar */}
+          <div className="bg-emerald-500 px-4 py-2 mb-2 flex items-center justify-between">
+            <span className="text-black text-xs font-bold tracking-widest uppercase geist-font">— SCOREBOARD —</span>
+            <span className="text-black text-xs font-bold tracking-widest geist-font">HIGH SCORE</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-emerald-900/40">
+            {metrics.map((metric, index) => (
               <motion.div
-                initial={{ scale: 0.5, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: index * 0.1 + 0.2,
-                  ease: [0.22, 1, 0.36, 1] 
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  ease: [0.22, 1, 0.36, 1]
                 }}
-                className="text-5xl md:text-6xl font-bold text-emerald-400 mb-3 geist-font tracking-tight"
+                className="bg-[#050505] p-8 text-center"
               >
-                {metric.value}
+                <motion.div
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.8,
+                    delay: index * 0.1 + 0.2,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
+                  className="text-5xl md:text-6xl font-bold text-emerald-400 mb-3 geist-font tracking-tight drop-shadow-[2px_2px_0px_#064e3b]"
+                >
+                  {metric.value}
+                </motion.div>
+                <p className="text-sm text-gray-400 inter-font uppercase tracking-widest">
+                  {metric.label}
+                </p>
               </motion.div>
-              <p className="text-base text-gray-400 inter-font">
-                {metric.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

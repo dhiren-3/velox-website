@@ -14,7 +14,7 @@ const AuroraBackground = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    
+
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.domElement.style.position = 'fixed';
     renderer.domElement.style.top = '0';
@@ -24,9 +24,9 @@ const AuroraBackground = () => {
     currentMount.appendChild(renderer.domElement);
 
     const material = new THREE.ShaderMaterial({
-      uniforms: { 
-        iTime: { value: 0 }, 
-        iResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) } 
+      uniforms: {
+        iTime: { value: 0 },
+        iResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
       },
       vertexShader: `void main() { gl_Position = vec4(position, 1.0); }`,
       fragmentShader: `
@@ -76,27 +76,27 @@ const AuroraBackground = () => {
     scene.add(mesh);
 
     let animationFrameId: number;
-    const animate = () => { 
-      animationFrameId = requestAnimationFrame(animate); 
-      material.uniforms.iTime.value += 0.016; 
-      renderer.render(scene, camera); 
+    const animate = () => {
+      animationFrameId = requestAnimationFrame(animate);
+      material.uniforms.iTime.value += 0.016;
+      renderer.render(scene, camera);
     };
 
-    const handleResize = () => { 
-      renderer.setSize(window.innerWidth, window.innerHeight); 
-      material.uniforms.iResolution.value.set(window.innerWidth, window.innerHeight); 
+    const handleResize = () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      material.uniforms.iResolution.value.set(window.innerWidth, window.innerHeight);
     };
 
     window.addEventListener('resize', handleResize);
     animate();
 
-    return () => { 
-      cancelAnimationFrame(animationFrameId); 
-      window.removeEventListener('resize', handleResize); 
-      if (currentMount.contains(renderer.domElement)) currentMount.removeChild(renderer.domElement); 
-      renderer.dispose(); 
-      material.dispose(); 
-      geometry.dispose(); 
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', handleResize);
+      if (currentMount.contains(renderer.domElement)) currentMount.removeChild(renderer.domElement);
+      renderer.dispose();
+      material.dispose();
+      geometry.dispose();
     };
   }, []);
 
@@ -116,22 +116,26 @@ export default function Hero() {
   return (
     <div ref={containerRef} className="relative min-h-screen bg-[#050505]">
       <AuroraBackground />
-      
+
       <div className="relative">
         <nav className="w-full px-6 py-4">
-          <div className="max-w-7xl mx-auto flex justify-between items-center backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-6 py-3">
+          <div className="max-w-7xl mx-auto flex justify-between items-center bg-[#050505] border-2 border-emerald-500 shadow-[4px_4px_0px_#047857] px-6 py-3">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-400 flex items-center justify-center">
+              <div className="w-8 h-8 bg-emerald-500 shadow-[2px_2px_0px_#064e3b] flex items-center justify-center">
                 <span className="text-sm font-bold text-black">VX</span>
               </div>
-              <span className="text-lg font-medium text-white">Velox</span>
+              <span className="text-lg font-bold uppercase tracking-widest text-white">Velox</span>
             </div>
-            <button 
+            <motion.button
               onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-emerald-500 hover:bg-emerald-400 px-6 py-2.5 rounded-xl text-black text-sm font-bold shadow-[0_0_25px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] transition-all"
+              animate={{ boxShadow: ["4px 4px 0px #064e3b", "4px 4px 15px #10b981", "4px 4px 0px #064e3b"] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9, x: 4, y: 4, boxShadow: "0px 0px 0px transparent" }}
+              className="bg-emerald-400 text-black font-bold uppercase text-xs tracking-widest border-2 border-emerald-700 px-6 py-2 cursor-pointer"
             >
               Request Pilot
-            </button>
+            </motion.button>
           </div>
         </nav>
 
@@ -143,7 +147,7 @@ export default function Hero() {
                   For US Freight Forwarders & 3PLs doing $10M+
                 </span>
               </div>
-              
+
               <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-light text-white tracking-tight mb-4">
                 Stop Paying Clerks to Type.
                 <span className="block mt-2 bg-gradient-to-r from-white via-emerald-200 to-emerald-500 bg-clip-text text-transparent tracking-tight">
@@ -156,18 +160,22 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-              <button 
+              <motion.button
                 onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-emerald-500 hover:bg-emerald-400 px-8 py-4 text-black rounded-xl font-bold text-base min-w-[200px] shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] transition-all"
+                whileHover={{ scale: 1.05, rotate: -2 }}
+                whileTap={{ scale: 0.95, x: 8, y: 8, boxShadow: "0px 0px 0px transparent" }}
+                className="bg-emerald-500 text-black font-black uppercase tracking-[0.2em] border-4 border-emerald-700 shadow-[8px_8px_0px_#022c22] px-8 py-4 min-w-[200px] cursor-pointer"
               >
                 Apply for Pilot
-              </button>
-              <button 
+              </motion.button>
+              <motion.button
                 onClick={() => document.getElementById('demo-video')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                className="backdrop-blur-md bg-white/5 border border-white/10 min-w-[200px] text-base font-medium text-white rounded-xl px-8 py-4 hover:bg-white/10 hover:border-emerald-500/30 transition-all"
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                whileTap={{ scale: 0.95, x: 6, y: 6, boxShadow: "0px 0px 0px transparent" }}
+                className="bg-[#050505] text-emerald-400 font-bold uppercase tracking-widest border-4 border-emerald-600 shadow-[6px_6px_0px_#047857] px-8 py-4 min-w-[200px] cursor-pointer"
               >
                 Watch Demo
-              </button>
+              </motion.button>
             </div>
 
             <div style={{ perspective: '1200px' }} className="max-w-4xl mx-auto">
@@ -181,7 +189,7 @@ export default function Hero() {
                 className="relative aspect-video overflow-hidden rounded-2xl border-2 border-emerald-500/30 bg-gradient-to-br from-emerald-950/40 to-emerald-900/40 shadow-[0_0_60px_rgba(16,185,129,0.3)] backdrop-blur-xl"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl" />
-                
+
                 <div className="relative flex h-full items-center justify-center">
                   <div className="text-center">
                     <div className="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-emerald-500/30 flex items-center justify-center">

@@ -47,7 +47,7 @@ export default function Problem() {
   return (
     <section className="bg-transparent px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-center text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-light text-white tracking-tight mb-16 lg:mb-20 geist-font">
+        <h2 className="text-center text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-bold text-white tracking-widest uppercase mb-16 lg:mb-20 geist-font">
           Manual Data Entry is Killing Your Margins
         </h2>
 
@@ -65,20 +65,21 @@ export default function Problem() {
                 key={index}
                 variants={item}
                 whileHover={{
-                  borderColor: 'rgba(239, 68, 68, 0.3)',
-                  boxShadow: '0 0 30px rgba(239, 68, 68, 0.15)',
-                  transition: { duration: 0.3 }
+                  x: 2,
+                  y: 2,
+                  boxShadow: '4px 4px 0px #047857',
+                  transition: { duration: 0.1 }
                 }}
-                className="glass-card rounded-2xl p-6 text-left backdrop-blur-md bg-white/[0.02] border border-white/10 transition-all duration-300"
+                className="bg-[#050505] border-2 border-emerald-500 shadow-[6px_6px_0px_#047857] p-6 text-left"
               >
-                <div className="mb-4">
-                  <Icon className="w-12 h-12 text-red-500/70" strokeWidth={1.5} />
+                <div className="mb-4 inline-flex items-center justify-center w-14 h-14 bg-emerald-500 shadow-[3px_3px_0px_#064e3b]">
+                  <Icon className="w-7 h-7 text-black" strokeWidth={2} />
                 </div>
-                
-                <h3 className="text-xl font-medium text-white mb-3 geist-font">
+
+                <h3 className="text-xl font-bold text-white mb-3 uppercase tracking-widest geist-font">
                   {problem.title}
                 </h3>
-                
+
                 <p className="text-base text-gray-400 leading-relaxed inter-font">
                   {problem.description}
                 </p>

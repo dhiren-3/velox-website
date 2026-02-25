@@ -31,7 +31,7 @@ export default function Mechanism() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-light text-white tracking-tight mb-6 geist-font"
+            className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-bold text-white tracking-widest uppercase mb-6 geist-font"
           >
             How the Invisible Agent Works.
           </motion.h2>
@@ -48,13 +48,13 @@ export default function Mechanism() {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Connecting Line - Desktop Only */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 -translate-y-1/2 h-1 -z-10">
+          <div className="hidden lg:block absolute top-[72px] left-[16.67%] right-[16.67%] -z-10">
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full h-full bg-gradient-to-r from-purple-500 via-fuchsia-500 to-purple-500 rounded-full blur-sm origin-left"
+              className="w-full border-t-4 border-dashed border-emerald-600 origin-left"
               style={{ transformOrigin: 'left' }}
             />
           </div>
@@ -68,29 +68,36 @@ export default function Mechanism() {
                   initial={{ opacity: 0, scale: 0.8, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   viewport={{ once: true, margin: '-100px' }}
-                  transition={{ 
-                    duration: 0.6, 
+                  transition={{
+                    duration: 0.6,
                     delay: index * 0.3,
-                    ease: [0.22, 1, 0.36, 1] 
+                    ease: [0.22, 1, 0.36, 1]
                   }}
-                  className="relative glass-card rounded-2xl p-8 backdrop-blur-md bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]"
+                  whileHover={{
+                    x: 2,
+                    y: 2,
+                    boxShadow: '4px 4px 0px #047857',
+                    transition: { duration: 0.1 }
+                  }}
+                  className="relative bg-[#050505] border-2 border-emerald-500 shadow-[6px_6px_0px_#047857] p-8"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="mb-6 p-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-fuchsia-500/20 border border-purple-500/30">
-                      <Icon className="w-10 h-10 text-purple-300" strokeWidth={1.5} />
+                    {/* Power-up icon square */}
+                    <div className="mb-6 w-16 h-16 bg-emerald-500 shadow-[4px_4px_0px_#000000] flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-black" strokeWidth={2} />
                     </div>
-                    
-                    <h3 className="text-2xl font-semibold text-white mb-4 geist-font">
+
+                    <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-widest geist-font">
                       {step.title}
                     </h3>
-                    
+
                     <p className="text-base text-gray-400 leading-relaxed inter-font">
                       {step.description}
                     </p>
                   </div>
 
                   {/* Step Number Badge */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center text-white text-sm font-bold shadow-lg">
+                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-emerald-500 shadow-[2px_2px_0px_#064e3b] flex items-center justify-center text-black text-sm font-bold">
                     {index + 1}
                   </div>
                 </motion.div>
