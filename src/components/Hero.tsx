@@ -186,22 +186,16 @@ export default function Hero() {
                   rotateX: videoRotateX,
                   transformStyle: 'preserve-3d'
                 }}
-                className="relative aspect-video overflow-hidden rounded-2xl border-2 border-emerald-500/30 bg-gradient-to-br from-emerald-950/40 to-emerald-900/40 shadow-[0_0_60px_rgba(16,185,129,0.3)] backdrop-blur-xl"
+                className="relative aspect-video border-4 border-emerald-500 shadow-[8px_8px_0px_#047857] bg-[#050505] overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl" />
-
-                <div className="relative flex h-full items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-emerald-500/30 flex items-center justify-center">
-                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-emerald-400 border-b-[12px] border-b-transparent ml-1" />
-                    </div>
-                    <span className="text-sm font-medium text-emerald-200">
-                      30-Second Demo Video
-                    </span>
-                  </div>
-                </div>
-
-                <div className="absolute -inset-[2px] -z-10 rounded-2xl bg-gradient-to-r from-emerald-500/50 via-green-500/50 to-emerald-500/50 opacity-60 blur-2xl" />
+                <video
+                  src="/demo.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
             </div>
           </div>
