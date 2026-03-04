@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 
 export default function ROI() {
   const metrics = [
-    { value: '99.9%', label: 'Extraction Accuracy' },
+    { value: '99.9%', label: 'Process Accuracy' },
     { value: '48 Hrs', label: 'To Full Deployment' },
-    { value: '$40k+', label: 'Saved per AP Clerk' },
+    { value: '$40k+', label: 'Saved per Employee' },
     { value: 'Zero', label: 'IT Integration Lift' }
   ];
 
@@ -21,7 +21,7 @@ export default function ROI() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-bold text-white tracking-widest uppercase mb-6 geist-font"
           >
-            The Math Makes Sense.
+            THE MATH MAKES SENSE.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -30,7 +30,7 @@ export default function ROI() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-xl text-gray-400 inter-font"
           >
-            Stop leaking margin on manual entry errors.
+            Stop leaking margin on manual processes.
           </motion.p>
         </div>
 

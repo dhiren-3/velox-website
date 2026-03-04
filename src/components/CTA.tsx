@@ -19,11 +19,11 @@ export default function CTA() {
           className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] font-bold text-white tracking-widest uppercase mb-8 geist-font"
           style={{ textShadow: '4px 4px 0px #047857' }}
         >
-          Stop Typing. Start Scaling.
+          STOP TYPING. START SCALING.
         </h2>
 
         <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-16 inter-font leading-relaxed">
-          Book a 15-minute discovery call to see if your freight operation qualifies for the $4,000 Early Access Pilot.
+          Book a 15-minute discovery call to see how our Operational Efficiency engine can add six figures to your bottom line.
         </p>
 
         {/* Arcade Cabinet Screen */}

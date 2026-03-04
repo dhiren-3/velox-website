@@ -7,18 +7,18 @@ export default function Mechanism() {
   const steps = [
     {
       icon: Mail,
-      title: 'Ingest',
-      description: 'Auto-fetches PDF and image invoices directly from your AP inbox the second they arrive.'
+      title: 'Audit',
+      description: 'We map your existing workflows to identify high-cost bottlenecks and manual data leaks.'
     },
     {
       icon: BrainCircuit,
-      title: 'Extract & Match',
-      description: 'Proprietary AI extracts line-items, taxes, and vendor details with 99.9% accuracy and matches them against your POs.'
+      title: 'Automate',
+      description: 'Proprietary AI extracts, matches, and processes your operational data with perfect precision.'
     },
     {
       icon: Database,
-      title: 'Sync to ERP',
-      description: 'Clean, formatted data is pushed instantly into CargoWise, QuickBooks, or your custom ERP.'
+      title: 'Scale',
+      description: 'Clean data is pushed instantly into your ERP, freeing your team to focus on pure growth.'
     }
   ];
 
@@ -33,7 +33,7 @@ export default function Mechanism() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-bold text-white tracking-widest uppercase mb-6 geist-font"
           >
-            How the Invisible Agent Works.
+            HOW OUR EFFICIENCY ENGINE WORKS
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

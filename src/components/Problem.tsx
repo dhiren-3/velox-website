@@ -30,17 +30,17 @@ export default function Problem() {
     {
       icon: DollarSign,
       title: 'Cost',
-      description: 'Paying humans $45k/year to copy-paste data.'
+      description: 'Paying humans premium salaries to perform robotic, repetitive data entry.'
     },
     {
       icon: AlertTriangle,
       title: 'Errors',
-      description: 'A single mistyped freight line-item costs thousands in overpayments.'
+      description: 'A single operational bottleneck costs thousands in delayed fulfillment and human error.'
     },
     {
       icon: Clock,
       title: 'Speed',
-      description: 'Invoices sit in inboxes for days, causing late fees and angry vendors.'
+      description: 'Legacy systems and manual workflows trap your data, causing late fees and angry clients.'
     }
   ];
 
@@ -48,7 +48,7 @@ export default function Problem() {
     <section className="bg-transparent px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-center text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-bold text-white tracking-widest uppercase mb-16 lg:mb-20 geist-font">
-          Manual Data Entry is Killing Your Margins
+          INEFFICIENT PROCESSES ARE KILLING YOUR RUNWAY
         </h2>
 
         <motion.div

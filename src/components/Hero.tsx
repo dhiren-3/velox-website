@@ -149,13 +149,13 @@ export default function Hero() {
               </div>
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-light text-white tracking-tight mb-4">
-                Stop Paying Clerks to Type.
+                STOP BLEEDING MARGIN.
                 <span className="block mt-2 bg-gradient-to-r from-white via-emerald-200 to-emerald-500 bg-clip-text text-transparent tracking-tight">
-                  Automate Your AP in 48 Hours.
+                  OPTIMIZE YOUR OPERATIONS.
                 </span>
               </h1>
               <p className="text-lg md:text-xl max-w-3xl leading-relaxed font-light text-gray-300 mx-auto mt-6">
-                We deploy an invisible AI agent into your inbox that extracts data from PDF invoices and pushes it directly into your ERP with 99.9% accuracy.
+                We deploy invisible AI agents that automate your most expensive bottlenecks—from manual data entry to project fulfillment—with 99.9% accuracy.
               </p>
             </div>
 
